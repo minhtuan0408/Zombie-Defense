@@ -1,0 +1,64 @@
+Advanced scroller changelog here: https://docs.google.com/document/d/1cN-U2gkfPMqVmIZCtvestz7J-XDvQBsLicZDikskQoc/edit?usp=sharing
+
+1.1.0
+- scale factor for scaling animations is now Vector2 (x and y axis can be set separately)
+- calculation changed  for scaling, fading and deflect 
+- you can now select curves for scaling, fading and deflection animations with the option to set a custom curve
+______________
+1.0.3
+- if you disable element, the scroller will be set automatically
+- performance optimization
+______________
+1.0.2
+- inertia bug pri scrolovani, last valid input fix
+______________
+1.0.1
+- pre inertiu som zmenil last valid input na zaciatku sa vynasobi 0.5 je to lepsie rychlajsie sa to spomaly zaroven elasticity ak das na 0.6 tak sa to pekne
+  pommaly vrati ale ak das uz viac ako 1 (neskusal som ci to je hranica ) tak tahanie blbne 
+- no a zaroven inertia by uz mala dobre fungovat - to je jedno aka sirka obrazovky zmenil som to ze cim mensie cislo tym skor sa to prestane scrollovat
+- scrolovanie sa spusti az p loading animacii 
+______________
+- urobit nieco s hierarchiou na advenced scroller ze ak  zapnes iste nsatavenia tak sa ti ukazu dalsie tomu prisluchajuce - mam
+- zarovnanie 
+- to klikanie mysov iba ak kline na scroll a iba ten konkretny sa bude posuvat
+- nieco ze ak zastavis tak scroller sa zastavi hned, alebo naopak sa pomaly spomaluje - ineria
+- reverse zarovnanie pre elementy
+- vertical scroll funguje 
+- scalovanie to je nieco ako vyber ale namiesto snapovania sa bude zvacsovat - zaroven zeby si si vedel nastavit
+         ze kde sa to bude zvacsouvat podla velkosti advenced scrolleru ktory je napr siroky 600 a ty nastavis ze hodnotu od 0-1 na 0,5 to znamena ze presne v strede sa to bude zvacsovat
+         a teda na 300 cize to co bude na tej hodnote bude najvacsie
+- nejake snapovanie by som mohol skusit - to je na selectovanie - hned z toho by som mohol dostat ze ktory je vybrany element a vratit ho 
+         snnaping elemenotov tiez ako scalovanie podla pozicie   
+- utils a scroll mam cez namespace - clovek by sa k nim nemal dostat bez kniznic, tiez ak pomenuje nieco svoje rovnako ako ja tak to nevadi pokial nema kniznicu 
+- tak ako snapovanie a scalovanie tak urobit fading
+- dal som prec reverse order - ak chce tak si to pootaca sam, robilo problemy pri endless scrolle pri scrollovani, ono ho tam mam len ho nevies zapnut v inspektore
+- cez curves urobit nejake zaoblenie alebo drahu pre elementy, ze ak bude vlnita tak aj pozicia elemenotv napr.
+     ak mam horizontal movement a budem mat nastavenu curves na nejaku jednu vlnu tak priposuvani budu elementy kopirovat krivku a menit tak svoju poziciu na y osi
+- Metoda - Get Selected Element(SelectedElement)
+- tak ako snapovanie a scalovanie tak urobit salector
+- na masku dat aj padding a softness
+- tooltips dopisat k vsetkemu - k tomu co treba som dal 
+- selector na selected element kde si vies dat vlastyn obr, Selector + offset
+- start form na endless nemam dokonceny - malo by mi to tie elementy este upravit poziciu tak aby ten od ktoreho sa to zacina aby bol na selection pos - pre vertical to nemam vobec urobene - myslim ze mam hotovo 
+- Endless nech sa da nastavit ktorym elementom bude zacinat
+- Metoda - alebo ze mozes dostat horizontal/vertical normalized position ci ako to je ze kde sa scroll nachadza tu ale bude problem s endless
+         - mam tu bug nejaky nefunguje to ako by malo treba prepocitat, vertical nemam + endless nad nim som ani nerozmyslal asi len vyhodim
+         error ze pre endless sa neda  - mali by uz set aj get fungovat takze uz len vertical urobit  - mam 
+- Metoda - tiez ju vies nastavit  tu horizontal normalized pos,
+- Metoda - scroll to element - scrolne sa tak aby bol element na selection position alebo najblizsie k tomu ako sa da
+         a tiez je problem to ze to nastavi dostredu nie na selection position - to uz je fixnute ide to na selection pos 
+         - nemam to cez animaciu a nefunguje endless - mam 
+- animacie DOhorizontalNormalizedPos aj DOverticalNormalizedPos - mam 
+- BUG - scroll to element nechce ist ak mam ze scroll to element cislo2 a som na jednotke takze z nej by ma malo hodit na 2. ale nejde to 
+        lebo scroll anchored pos x je o desatiny vacsie ako max pozicia scrollu - fixol som to robilo to len na elestic, porovnavam teraz v scrolle v 
+        update ze ci su cisla skooro rovnake ak ano tak sa tam nespusta animacia ktora zabranila nastaveniu hodnoty
+- Metoda - ToNextElement, toPreviousElement pomocou nej urobit btny - mam 
+- buttony ze doprava dolava hore dole alee taky skor cez kod ze si to vies lahko urobit na svoju hru - to pomocou tych to next elbo previous ale tie veis pouzit normalized pos
+- nech sa da spawnut cez ui v hierarchii a ak tam nie je canvas nech vytvori 
+- prerobeny input na pointerEventData - aby to fungovalo na vsetkych typoch canvasoch 
+- ak je zapnuty selector loaduje sa na animaciu cez fade 
+
+- Scrolling animacie - rozne animacie pri scrollovani - pinterest - napr vsetko sa scalne dole, zmeni sa spacing a potom vrati spat, 
+- scrollbar ?
+- Btny co si pod scrollom a ukazuju na ktorom elemente si - dobre animacie mam na pintereste(ze nebude sa hybat ta bodka ale pozadie)
+- a co tak custom krivka k animaciam. ze mozes si vybrat aku chces alebo navolit custom
