@@ -31,7 +31,7 @@ public class EndingPanel : MonoBehaviour
 			PlayerProgress.Instance.OnLevelWin();
 		}
 		Time.timeScale = 1f;
-		SceneManager.LoadScene(menuSceneName);
+		GameManager.Instance.LoadScene(menuSceneName);
 	}
 
 	// 👉 Replay
@@ -39,7 +39,7 @@ public class EndingPanel : MonoBehaviour
 	{
 		SoundManager.Instance.PlaySFX("Click");
 		Time.timeScale = 1f;
-		SceneManager.LoadScene("GamePlay");
+		GameManager.Instance.LoadScene("GamePlay");
 	}
 
 	// 👉 Next Level
@@ -51,7 +51,7 @@ public class EndingPanel : MonoBehaviour
 			PlayerProgress.Instance.OnLevelWin();		
 		}
 		Time.timeScale = 1f;
-		SceneManager.LoadScene("GamePlay");
+		GameManager.Instance.LoadScene("GamePlay");
 	}
 
 	// 👉 Hiển thị Ending

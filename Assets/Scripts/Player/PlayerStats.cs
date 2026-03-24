@@ -81,8 +81,8 @@ public class PlayerStats : MonoBehaviour, IDamageable
 	{
 		currentMP += amount;
 		currentMP = Mathf.Clamp(currentMP, 0, maxMP);
-
-		MPUpVFX.Play();
+		if(MPUpVFX)
+			MPUpVFX.Play();
 	}
 
 	public bool UseMana(int amount)

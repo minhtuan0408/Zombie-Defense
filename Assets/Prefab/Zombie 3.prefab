@@ -54,7 +54,7 @@ MonoBehaviour:
   anim: {fileID: 2117202298164147733}
   attackCooldown: 5
   detectRange: 12
-  loseRange: 20
+  loseRange: 40
   attackRange: 2.5
   autoChase: 0
 --- !u!195 &2308754229085650631

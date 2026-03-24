@@ -100,7 +100,7 @@ public class BaseStory : MonoBehaviour
 				Avatar.sprite = line.avatar;
 				Avatar.gameObject.SetActive(line.avatar != null);
 			}
-
+			yield return new WaitForSeconds(0.3f);
 			yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
 		}
 
