@@ -745,6 +745,7 @@ PlayerSettings:
   webGLPowerPreference: 2
   scriptingDefineSymbols:
     Android: ALLIN13DSHADER_BIRP
+    Standalone: ALLIN13DSHADER_BIRP
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}

@@ -90,6 +90,8 @@ public class BossAI : MonoBehaviour, IDamageable
 	// 👉 gọi từ Animation Event
 	public void TriggerDamageRegion()
 	{
+		SoundManager.Instance.PlaySFX("Boss Attack");
+		CameraShake.Instance.Shake(0.3f, 0.3f);
 		if (DamagedRegion == null) return;
 
 		DamagedRegion.SetActive(true);
@@ -114,6 +116,7 @@ public class BossAI : MonoBehaviour, IDamageable
 
 		if (currentHP <= 0)
 		{
+			SoundManager.Instance.PlaySFX("Boss Die");
 			Die();
 		}
 	}

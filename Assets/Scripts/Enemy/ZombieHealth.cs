@@ -46,6 +46,12 @@ public class ZombieHealth : MonoBehaviour, IDamageable
 		if (currentHealth <= 0)
 		{
 			Die();
+
+			int rand = Random.Range(0, 2); // 0 hoặc 1
+			if (rand == 0)
+				SoundManager.Instance.PlaySFX("Zombie Die");
+			else
+				SoundManager.Instance.PlaySFX("Zombie Die 2");
 		}
 	}
 

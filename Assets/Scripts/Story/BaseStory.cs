@@ -2,13 +2,14 @@
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.UI;
 [System.Serializable]
 public class DialogLine
 {
 	public string speaker;
 	public string text;
+	public Sprite avatar; 
 }
-
 [System.Serializable]
 public class StoryStep
 {
@@ -24,7 +25,7 @@ public class BaseStory : MonoBehaviour
 	public TextMeshProUGUI dialogText;
 	public GameObject dialogPanel;
 
-
+	public Image Avatar;
 
 	public Camera storyCamera;
 
@@ -92,6 +93,13 @@ public class BaseStory : MonoBehaviour
 		{
 			nameText.text = line.speaker;
 			dialogText.text = line.text;
+
+			// 👇 thêm phần set avatar
+			if (Avatar != null)
+			{
+				Avatar.sprite = line.avatar;
+				Avatar.gameObject.SetActive(line.avatar != null);
+			}
 
 			yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
 		}

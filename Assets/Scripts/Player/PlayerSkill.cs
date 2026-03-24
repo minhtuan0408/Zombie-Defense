@@ -13,10 +13,12 @@ public class PlayerSkill : MonoBehaviour
 	{
 		if (stats.UseMana(30))
 		{
+			SoundManager.Instance.PlaySFX("Cooldown");
 			Debug.Log("Skill used!");
 		}
 		else
 		{
+			SoundManager.Instance.PlaySFX("Wrong");
 			Debug.Log("Not enough mana");
 		}
 	}

@@ -34,6 +34,7 @@ public class PlayerStats : MonoBehaviour, IDamageable
 		SoundManager.Instance.PlaySFX("Hit");
 		if (currentHP <= 0)
 		{
+			SoundManager.Instance.PlaySFX("PlayerGetDame");
 			Die();
 		}
 	}

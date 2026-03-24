@@ -16,11 +16,7 @@ public class MainMenuUI : MonoBehaviour
 	public void OnClickPlay()
 	{
 		Debug.Log("Play clicked");
-
-		// TODO: bạn tự xử lý load level ở đây
-		// Ví dụ:
-		// SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
+		SoundManager.Instance.PlaySFX("Click");
 		PlayGame();
 	}
 
@@ -33,8 +29,8 @@ public class MainMenuUI : MonoBehaviour
 	// ===== LEVEL =====
 	public void OnClickLevel()
 	{
-		Debug.Log("Open Level Panel");
 
+		SoundManager.Instance.PlaySFX("Click");
 		if (levelPanel != null)
 			levelPanel.SetActive(true);
 	}
@@ -42,8 +38,8 @@ public class MainMenuUI : MonoBehaviour
 	// ===== SETTING =====
 	public void OnClickSetting()
 	{
-		Debug.Log("Open Setting Panel");
 
+		SoundManager.Instance.PlaySFX("Click");
 		if (settingPanel != null)
 			settingPanel.SetActive(true);
 	}
@@ -51,6 +47,7 @@ public class MainMenuUI : MonoBehaviour
 	// ===== CLOSE (dùng chung cho panel) =====
 	public void ClosePanel(GameObject panel)
 	{
+		SoundManager.Instance.PlaySFX("Click");
 		if (panel != null)
 			panel.SetActive(false);
 	}

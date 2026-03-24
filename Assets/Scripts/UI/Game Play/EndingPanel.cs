@@ -24,12 +24,12 @@ public class EndingPanel : MonoBehaviour
 	
 	public void OnClick_BackToMenu()
 	{
+		SoundManager.Instance.PlaySFX("Click");
 		Debug.Log("CLICK");
 		if (GameManager.Instance.isWin)
 		{
 			PlayerProgress.Instance.OnLevelWin();
 		}
-
 		Time.timeScale = 1f;
 		SceneManager.LoadScene(menuSceneName);
 	}
@@ -37,20 +37,19 @@ public class EndingPanel : MonoBehaviour
 	// 👉 Replay
 	public void OnClick_Replay()
 	{
+		SoundManager.Instance.PlaySFX("Click");
 		Time.timeScale = 1f;
 		SceneManager.LoadScene("GamePlay");
-
 	}
 
 	// 👉 Next Level
 	public void OnClick_NextLevel()
 	{
+		SoundManager.Instance.PlaySFX("Click");
 		if (GameManager.Instance.isWin)
 		{
-			PlayerProgress.Instance.OnLevelWin();
-			
+			PlayerProgress.Instance.OnLevelWin();		
 		}
-
 		Time.timeScale = 1f;
 		SceneManager.LoadScene("GamePlay");
 	}
@@ -83,15 +82,21 @@ public class EndingPanel : MonoBehaviour
 	{
 		// 🎯 1. Hiện Win/Lose
 		if (isWin)
+		{
+			SoundManager.Instance.PlaySFX("Win");
 			winImage.SetActive(true);
+		}
 		else
+		{
+			SoundManager.Instance.PlaySFX("Lose");
 			loseImage.SetActive(true);
+		}
 
 		yield return new WaitForSecondsRealtime(0.5f);
 
 		// 🎯 2. Hiện combo
 		bestComboText.gameObject.SetActive(true);
-
+		SoundManager.Instance.PlaySFX("ComboShow");
 		int best = ComboManager.Instance.bestCombo;
 		bestComboText.text = "BEST COMBO x" + best;
 

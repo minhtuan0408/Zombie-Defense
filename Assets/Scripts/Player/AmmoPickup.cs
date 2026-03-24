@@ -9,10 +9,6 @@ public class AmmoPickup : MonoBehaviour
 	public Transform player;
 	private bool isAttracting = false;
 
-	void Start()
-	{
-		
-	}
 
 	void Update()
 	{
@@ -47,7 +43,7 @@ public class AmmoPickup : MonoBehaviour
 			{
 				handler.AddAmmo(ammoAmount);
 			}
-
+			SoundManager.Instance.PlaySFX("PickUp");
 			Destroy(gameObject);
 		}
 	}

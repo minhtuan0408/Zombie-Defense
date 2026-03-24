@@ -322,6 +322,34 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 2da20e68001410b419cfef9bb3cc6085, type: 3}
   - name: Zombie Die attack
     clip: {fileID: 8300000, guid: d02bc4670740cf04d915954aa5ac12d9, type: 3}
+  - name: Click
+    clip: {fileID: 8300000, guid: 76796c2b5097542459ef101f388d638a, type: 3}
+  - name: Boss Attack
+    clip: {fileID: 8300000, guid: c6edb160fcf742545adcac4f4551b7d7, type: 3}
+  - name: Boss Die
+    clip: {fileID: 8300000, guid: 1b62708fa90efb8449e264df323bffca, type: 3}
+  - name: Grr
+    clip: {fileID: 8300000, guid: 8af4f720762641d4ba5503a40a3274ce, type: 3}
+  - name: ComboShow
+    clip: {fileID: 8300000, guid: d521c999251f4694a9cb592506903b24, type: 3}
+  - name: Win
+    clip: {fileID: 8300000, guid: 662b893a3fcbb4149beb8fb98e2bfd24, type: 3}
+  - name: Lose
+    clip: {fileID: 8300000, guid: ed9b3ea835c4e2c47bf63d5936f8459a, type: 3}
+  - name: PlayerGetDame
+    clip: {fileID: 8300000, guid: 9eecfb995a43f954ab082a6a8e4ad52d, type: 3}
+  - name: ShotGun
+    clip: {fileID: 8300000, guid: 443a57ed340b2f140b77cf17166a5515, type: 3}
+  - name: ReloadDone
+    clip: {fileID: 8300000, guid: 0df85fd5c6f836e4281ee71de9172bf4, type: 3}
+  - name: PickUp
+    clip: {fileID: 8300000, guid: ba593c746f0c5c74193cac2f7278e5dc, type: 3}
+  - name: Wrong
+    clip: {fileID: 8300000, guid: aec58c20906a0c04abdd9dac30f5ddc1, type: 3}
+  - name: Reload
+    clip: {fileID: 8300000, guid: 0df85fd5c6f836e4281ee71de9172bf4, type: 3}
+  - name: Cooldown
+    clip: {fileID: 8300000, guid: b81b1cca6aff28b429366c551135c7d3, type: 3}
   muteAll: 0
   muteBGM: 0
   muteSFX: 0

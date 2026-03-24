@@ -41,7 +41,7 @@ public class LevelPanel : MonoBehaviour, IPointerClickHandler
 	public void OnPointerClick(PointerEventData eventData)
 	{
 		bool isUnlocked = index <= PlayerProgress.Instance.CurrentLevel;
-
+		SoundManager.Instance.PlaySFX("Click");
 		if (!isUnlocked)
 		{
 			Debug.Log("Level bị khóa");

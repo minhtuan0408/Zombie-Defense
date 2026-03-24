@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7818082821550914233}
-  - component: {fileID: 1108174108790642760}
   - component: {fileID: 7108493308480362313}
   - component: {fileID: 1996920097453791795}
+  - component: {fileID: 967707528530957736}
   m_Layer: 6
   m_Name: Fire Bullet
   m_TagString: Bullet
@@ -36,23 +36,6 @@ Transform:
   - {fileID: 2223820530585233802}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1108174108790642760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5801909693791907513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79527a7fc6938514ea66fb7e73ef0bbf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 17
-  lifeTime: 5
-  damage: 20
-  particleEnd: {fileID: 2223820530585233803}
-  GunBullet: {fileID: 4303857246416335143}
 --- !u!65 &7108493308480362313
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -101,6 +84,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &967707528530957736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5801909693791907513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f49f027370c971645858ffdd58f5fa2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 17
+  lifeTime: 5
+  damage: 20
+  maxPenetrations: 3
+  particleEnd: {fileID: 2223820530585233803}
+  GunBullet: {fileID: 4303857246416335143}
 --- !u!1001 &3706534536759818207
 PrefabInstance:
   m_ObjectHideFlags: 0

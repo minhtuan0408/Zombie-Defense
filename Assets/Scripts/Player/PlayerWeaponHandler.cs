@@ -14,7 +14,7 @@ public class PlayerWeaponHandler : MonoBehaviour
 	[Header("Skill")]
 	public GameObject skillBulletPrefab;
 
-	public float skillFireRate = 1f;   // tốc độ bắn khi skill active
+	public float skillFireRate = 0.7f;   // tốc độ bắn khi skill active
 	public int skillManaCost = 50;
 
 	public float skillDuration = 5f;
@@ -44,8 +44,12 @@ public class PlayerWeaponHandler : MonoBehaviour
 		bool canUse =
 			Time.time - lastSkillUseTime >= skillCooldown &&
 			playerStats.GetCurrentMP() >= skillManaCost;
-
-		canUseImage.SetActive(canUse && !skillActive);
+		if (canUse && !skillActive)
+		{
+			canUseImage.SetActive(canUse && !skillActive);
+			
+		}
+		
 	}
 	public void PickWeapon(Weapon weapon)
 	{
@@ -134,6 +138,7 @@ public class PlayerWeaponHandler : MonoBehaviour
 	}
 	void SkillShotgunShoot(Vector3 shootDir)
 	{
+		SoundManager.Instance.PlaySFX("ShotGun");
 		int bulletCount = 5;
 		float spreadAngle = 30f;
 
@@ -177,7 +182,7 @@ public class PlayerWeaponHandler : MonoBehaviour
 			lastSkillShotTime = Time.time;
 
 			SkillShotgunShoot(shootDir);
-			CameraShake.Instance.Shake(0.3f, 0.1f);
+			CameraShake.Instance.Shake(0.3f, 0.2f);
 
 			return; // ❗ chặn luôn không chạy xuống dưới
 		}
@@ -245,7 +250,7 @@ public class PlayerWeaponHandler : MonoBehaviour
 
 			yield return null;
 		}
-
+		SoundManager.Instance.PlaySFX("Reload");
 		// 👉 reload thật
 		CurrentWeapon.Reload();
 
