@@ -42,8 +42,8 @@ public class UIWeapon : MonoBehaviour
 	{
 		if (slot == 0)
 			slot1ReloadBar.gameObject.SetActive(false);
-		else
-			slot2ReloadBar.gameObject.SetActive(false);
+		//else
+		//	slot2ReloadBar.gameObject.SetActive(false);
 	}
 
 	void Awake()

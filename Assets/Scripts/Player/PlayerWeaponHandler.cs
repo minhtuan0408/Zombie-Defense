@@ -37,7 +37,7 @@ public class PlayerWeaponHandler : MonoBehaviour
 
 		if (canUseImage != null)
 			canUseImage.SetActive(true);
-
+		isReloading = false;
 		skillActive = false;
 	}
 	void Start()
