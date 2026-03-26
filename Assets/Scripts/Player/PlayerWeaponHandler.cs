@@ -29,6 +29,7 @@ public class PlayerWeaponHandler : MonoBehaviour
 
 	public PlayerStats playerStats;
 
+
 	void Start()
 	{
 		if (weapons[0] != null)

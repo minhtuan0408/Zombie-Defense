@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
@@ -15,6 +15,10 @@ public class UIWeapon : MonoBehaviour
 	public TextMeshProUGUI slot2Ammo;
 	public Image slot2Selected;
 	public Image slot2ReloadBar;
+	private void OnEnable()
+	{
+		
+	}
 	public void UpdateReloadProgress(int slot, float value)
 	{
 		if (slot == 0)

@@ -3785,7 +3785,7 @@ PrefabInstance:
       objectReference: {fileID: 1635074639}
     - target: {fileID: 365737193008597058, guid: 7d42670ab46b21646be99844ef09dceb, type: 3}
       propertyPath: ScrollSensitivity
-      value: 0.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 365737193008597058, guid: 7d42670ab46b21646be99844ef09dceb, type: 3}
       propertyPath: Elements.Array.size
