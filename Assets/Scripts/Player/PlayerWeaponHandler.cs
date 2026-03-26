@@ -29,7 +29,17 @@ public class PlayerWeaponHandler : MonoBehaviour
 
 	public PlayerStats playerStats;
 
+	private void OnEnable()
+	{
+		// reset skill UI
+		if (skillFillImage != null)
+			skillFillImage.fillAmount = 0f;
 
+		if (canUseImage != null)
+			canUseImage.SetActive(true);
+
+		skillActive = false;
+	}
 	void Start()
 	{
 		if (weapons[0] != null)
@@ -42,13 +52,16 @@ public class PlayerWeaponHandler : MonoBehaviour
 	}
 	void Update()
 	{
+		if (isReloading && CurrentWeapon != null)
+		{
+			UIWeapon.Instance.UpdateAmmo(currentSlot, CurrentWeapon);
+		}
 		bool canUse =
 			Time.time - lastSkillUseTime >= skillCooldown &&
 			playerStats.GetCurrentMP() >= skillManaCost;
 		if (canUse && !skillActive)
 		{
 			canUseImage.SetActive(canUse && !skillActive);
-			
 		}
 		
 	}

@@ -25,6 +25,7 @@ public class ComboManager : MonoBehaviour
 
 	void Update()
 	{
+		if (!gameObject.activeInHierarchy) return; // 👈 thêm dòng này
 		if (combo > 0)
 		{
 			timer -= Time.deltaTime;

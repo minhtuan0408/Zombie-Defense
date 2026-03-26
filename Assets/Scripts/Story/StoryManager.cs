@@ -36,7 +36,11 @@ public class StoryManager : MonoBehaviour
 		story.OnStoryFinished += OnStoryFinished;
 		GamePlayController.Instance.OnStoryStart(); 
 		if (CanvasGame != null)
-			CanvasGame.SetActive(false);
+		{
+			CanvasGame.GetComponent<CanvasGroup>().alpha = 0;
+			CanvasGame.GetComponent<CanvasGroup>().blocksRaycasts = false;
+		}
+
 
 		if (Player != null)
 			Player.SetActive(false);
@@ -51,7 +55,10 @@ public class StoryManager : MonoBehaviour
 		Debug.Log("Story Finished");
 		mainCamera.enabled = true;
 		if (CanvasGame != null)
-			CanvasGame.SetActive(true);
+		{
+			CanvasGame.GetComponent<CanvasGroup>().alpha = 1;
+			CanvasGame.GetComponent<CanvasGroup>().blocksRaycasts = true;
+		}
 		if (Player != null)
 			Player.SetActive(true);
 		story.OnStoryFinished -= OnStoryFinished;

@@ -17,7 +17,12 @@ public class UIWeapon : MonoBehaviour
 	public Image slot2ReloadBar;
 	private void OnEnable()
 	{
-		
+		// reset reload UI (tránh bị kẹt thanh)
+		HideReload(0);
+		HideReload(1);
+
+		// reset scale nếu có animation trước đó
+		transform.localScale = Vector3.one;
 	}
 	public void UpdateReloadProgress(int slot, float value)
 	{
